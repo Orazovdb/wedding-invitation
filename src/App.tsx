@@ -1,0 +1,41 @@
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { CouplePhoto } from "./components/CouplePhoto";
+import { InvitationContent } from "./components/InvitationContent";
+import { weddingData } from "./data/wedding";
+import "./App.css";
+
+function App() {
+	const [isOpen, setIsOpen] = useState(false);
+	const audioRef = useRef<HTMLAudioElement>(null);
+
+	useEffect(() => {
+		document.body.style.overflow = isOpen ? "" : "hidden";
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [isOpen]);
+
+	const handleOpenInvitation = () => {
+		setIsOpen(true);
+		audioRef.current?.play().catch(() => {});
+	};
+
+	return (
+		<div className="app">
+			<audio
+				ref={audioRef}
+				src={weddingData.musicUrl}
+				loop
+				preload="metadata"
+				aria-label="Фоновая музыка приглашения"
+			/>
+			<AnimatePresence mode="wait">
+				<CouplePhoto key="couple-photo" onOpen={handleOpenInvitation} />
+				<InvitationContent key="content" />
+			</AnimatePresence>
+		</div>
+	);
+}
+
+export default App;

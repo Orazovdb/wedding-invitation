@@ -1,0 +1,71 @@
+:root {
+	font-family: "Montserrat", system-ui, sans-serif !important;
+	line-height: 1.5;
+	font-weight: 400;
+	color: #3d2c1e;
+	background-color: #faf8f5;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	/* Классическая палитра: слоновая кость + золото */
+	--color-bg: #faf8f5;
+	--color-bg-soft: #f5f0e8;
+	--color-bg-card: #fffef9;
+	--color-accent: #b8860b;
+	--color-accent-light: #d4af37;
+	--color-text: #3d2c1e;
+	--color-text-muted: #5c4a3a;
+	--color-border: rgba(184, 134, 11, 0.25);
+	--color-shadow: rgba(184, 134, 11, 0.12);
+	--color-heart: rgba(184, 134, 11, 0.45);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+/* Тонкий тёмный скроллбар как на референсе */
+html {
+	scrollbar-width: thin;
+	scrollbar-color: #333 #fff;
+}
+
+::-webkit-scrollbar {
+	width: 3px;
+}
+
+::-webkit-scrollbar-track {
+	background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #333;
+	border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #1a1a1a;
+}
+
+#root {
+	min-height: 100vh;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+button {
+	font-family: inherit;
+}
