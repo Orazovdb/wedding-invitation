@@ -62,16 +62,17 @@
     }
     </script>
 
-    <link rel="canonical" href="/" id="canonical-link" />
-
-    <!-- Resolve absolute URLs for SEO (og:image, canonical) -->
+    <!-- Resolve absolute URLs for SEO (og:image, canonical) - run at load -->
     <script>
       (function() {
         var origin = window.location.origin;
         var img = origin + '/rh.jpeg';
         document.querySelector('meta[property="og:image"]')?.setAttribute('content', img);
         document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', img);
-        document.getElementById('canonical-link')?.setAttribute('href', origin + '/');
+        var link = document.createElement('link');
+        link.rel = 'canonical';
+        link.href = origin + '/';
+        document.head.appendChild(link);
       })();
     </script>
   </head>
