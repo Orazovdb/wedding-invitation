@@ -1,26 +1,5 @@
-/* Шрифт Times New Roman из public/fonts/ */
-@font-face {
-	font-family: "Times New Roman";
-	src:
-		url("/fonts/TimesNewRomanPSMT.woff2") format("woff2"),
-		url("/fonts/TimesNewRomanPSMT.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Times New Roman";
-	src:
-		url("/fonts/TimesNewRomanPS-ItalicMT.woff2") format("woff2"),
-		url("/fonts/TimesNewRomanPS-ItalicMT.woff") format("woff");
-	font-weight: normal;
-	font-style: italic;
-	font-display: swap;
-}
-
 :root {
-	font-family: "Times New Roman", Times, serif !important;
+	font-family: "Montserrat", system-ui, sans-serif !important;
 	line-height: 1.5;
 	font-weight: 400;
 	color: #3d2c1e;
@@ -52,7 +31,7 @@ body {
 	margin: 0;
 	min-width: 320px;
 	min-height: 100vh;
-	font-family: "Times New Roman", Times, serif !important;
+	font-family: "Montserrat", system-ui, sans-serif !important;
 }
 
 /* Тонкий тёмный скроллбар как на референсе */
