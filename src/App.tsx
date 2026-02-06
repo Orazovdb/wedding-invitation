@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 import { CouplePhoto } from "./components/CouplePhoto";
 import { InvitationContent } from "./components/InvitationContent";
 import { weddingData } from "./data/wedding";
 import "./App.css";
+
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +25,7 @@ function App() {
 
 	return (
 		<div className="app">
+			<Analytics />
 			<audio
 				ref={audioRef}
 				src={weddingData.musicUrl}
