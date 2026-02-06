@@ -14,10 +14,18 @@ function getMonogram(groomName: string, brideName: string): string {
 }
 
 const OPEN_DURATION = 2;
+const AUTO_OPEN_DELAY_MS = 5000;
 
 export function CouplePhoto({ onOpen }: CouplePhotoProps) {
 	const [isOpening, setIsOpening] = useState(false);
 	const [showContentAfterOpen, setShowContentAfterOpen] = useState(false);
+
+	useEffect(() => {
+		const autoOpenTimer = setTimeout(() => {
+			setIsOpening(true);
+		}, AUTO_OPEN_DELAY_MS);
+		return () => clearTimeout(autoOpenTimer);
+	}, []);
 
 	useEffect(() => {
 		if (!isOpening) {

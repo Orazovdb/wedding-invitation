@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Contact } from "./Contact";
 import { Countdown } from "./Countdown";
 import { DateLocation } from "./DateLocation";
 import { Schedule } from "./Schedule";
@@ -17,6 +18,7 @@ export function InvitationContent() {
 			<Schedule />
 			<Countdown />
 			{/* <Photos /> */}
+			<Contact />
 			<motion.footer
 				className="invitation-footer"
 				initial={{ opacity: 0 }}

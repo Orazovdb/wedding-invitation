@@ -19,13 +19,96 @@
 	margin-left: auto;
 }
 
-.date-main {
-	margin: 0 0 0.5rem;
-	font-size: clamp(2rem, 6vw, 3rem);
-	font-weight: 700;
-	letter-spacing: 0.02em;
+.date-calendar {
+	display: inline-block;
+	margin: 0 0 1.5rem auto;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", serif;
+	width: 100%;
+}
+
+.date-calendar-title {
+	margin: 0 0 1rem;
+	font-size: clamp(1.5rem, 2.5vw, 1rem);
+	font-weight: 600;
+	letter-spacing: 0.08em;
 	color: #1a1a1a;
 	text-transform: uppercase;
+}
+
+.date-calendar-weekdays {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 2px 8px;
+	margin-bottom: 0.5rem;
+	font-size: clamp(1rem, 1.8vw, 0.7rem);
+	letter-spacing: 0.04em;
+	color: #5c4a3a;
+	opacity: 0.9;
+}
+
+.date-calendar-weekday {
+	text-align: center;
+	min-width: 1.8em;
+}
+
+.date-calendar-grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 2px 8px;
+	font-size: clamp(1.5rem, 2vw, 0.85rem);
+}
+
+.date-calendar-cell {
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 1.8em;
+	position: relative;
+	color: #1a1a1a;
+}
+
+.date-calendar-cell-wedding {
+	position: relative;
+}
+
+.date-calendar-day {
+	z-index: 1;
+}
+
+.date-calendar-heart {
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: var(--color-accent);
+	z-index: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.date-calendar-heart-icon {
+	animation: date-heart-pulse 1s ease-in-out infinite;
+	transform-origin: center;
+}
+
+.date-calendar-cell-wedding .date-calendar-day {
+	position: relative;
+	z-index: 2;
+	font-weight: 600;
+}
+
+@keyframes date-heart-pulse {
+	0%, 100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.94;
+		transform: scale(1.1);
+	}
 }
 
 .date-occasion {

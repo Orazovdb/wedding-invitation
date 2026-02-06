@@ -5,6 +5,9 @@ export const weddingData = {
 	couplePhotoUrl: "rh.jpeg",
 	groomName: "Rovshen",
 	brideName: "Hanum",
+	/** Телефоны для связи */
+	groomPhone: "+993 71914638",
+	bridePhone: "+993 61570925",
 	weddingDate: new Date("2026-04-04T18:00:00"),
 	venue: "Gülzaman",
 	venueAddress: "",
