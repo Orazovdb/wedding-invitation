@@ -49,11 +49,11 @@ export function Countdown() {
     return () => clearInterval(timer);
   }, []);
 
-  const units: { key: keyof TimeLeft; label: string }[] = [
-    { key: 'days', label: 'дней' },
-    { key: 'hours', label: 'часов' },
-    { key: 'minutes', label: 'минут' },
-    { key: 'seconds', label: 'секунд' },
+  const units: { key: keyof TimeLeft; label: string; short: string }[] = [
+    { key: 'days', label: 'дней', short: 'д' },
+    { key: 'hours', label: 'часов', short: 'ч' },
+    { key: 'minutes', label: 'минут', short: 'м' },
+    { key: 'seconds', label: 'секунд', short: 'с' },
   ];
 
   const weddingDateStr = weddingData.weddingDate.toLocaleDateString('ru-RU', {
@@ -85,17 +85,28 @@ export function Countdown() {
         {weddingDateStr}
       </motion.p>
       <motion.div
-        className="countdown-grid"
+        className="countdown-line"
         variants={container}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {units.map(({ key, label }) => (
-          <motion.div key={key} className="countdown-unit" variants={item}>
-            <span className="countdown-value">{timeLeft[key]}</span>
-            <span className="countdown-label">{label}</span>
-          </motion.div>
+        {units.map(({ key, label, short }, index) => (
+          <span key={key} className="countdown-line-inner">
+            <motion.span
+              className="countdown-unit"
+              variants={item}
+              title={label}
+            >
+              <span className="countdown-value">{String(timeLeft[key]).padStart(2, '0')}</span>
+              <span className="countdown-label">{short}</span>
+            </motion.span>
+            {index < units.length - 1 && (
+              <span className="countdown-sep" aria-hidden>
+                :
+              </span>
+            )}
+          </span>
         ))}
       </motion.div>
     </section>

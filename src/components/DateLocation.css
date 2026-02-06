@@ -5,8 +5,11 @@
 }
 
 .date-intro-block {
-	text-align: right;
 	margin-bottom: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .date-intro-text {
@@ -17,20 +20,20 @@
 	line-height: 1.5;
 	width: 64%;
 	margin-left: auto;
+	text-align: right;
 }
 
 .date-calendar {
 	display: inline-block;
-	margin: 0 0 1.5rem auto;
+	margin: 0 auto 1.5rem auto;
 	text-align: center;
-	font-family: Georgia, "Times New Roman", serif;
-	width: 100%;
+	width: 80%;
 }
 
 .date-calendar-title {
 	margin: 0 0 1rem;
-	font-size: clamp(1.5rem, 2.5vw, 1rem);
-	font-weight: 600;
+	font-size: clamp(1rem, 2.5vw, 1rem);
+	font-weight: 400;
 	letter-spacing: 0.08em;
 	color: #1a1a1a;
 	text-transform: uppercase;
@@ -41,7 +44,7 @@
 	grid-template-columns: repeat(7, 1fr);
 	gap: 2px 8px;
 	margin-bottom: 0.5rem;
-	font-size: clamp(1rem, 1.8vw, 0.7rem);
+	font-size: clamp(0.7rem, 1.8vw, 0.7rem);
 	letter-spacing: 0.04em;
 	color: #5c4a3a;
 	opacity: 0.9;
@@ -56,7 +59,7 @@
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	gap: 2px 8px;
-	font-size: clamp(1.5rem, 2vw, 0.85rem);
+	font-size: clamp(1rem, 2vw, 0.85rem);
 }
 
 .date-calendar-cell {
@@ -90,7 +93,7 @@
 }
 
 .date-calendar-heart-icon {
-	animation: date-heart-pulse 1s ease-in-out infinite;
+	animation: date-heart-pulse 1.4s ease-in-out infinite;
 	transform-origin: center;
 }
 
@@ -101,7 +104,8 @@
 }
 
 @keyframes date-heart-pulse {
-	0%, 100% {
+	0%,
+	100% {
 		opacity: 1;
 		transform: scale(1);
 	}
@@ -139,7 +143,6 @@
 	color: #fff;
 	text-align: center;
 	letter-spacing: 0.15em;
-	font-family: Georgia, "Times New Roman", serif;
 	background-color: rgba(184, 135, 11, 0.556);
 	width: fit-content;
 	margin: 0 auto 1rem;

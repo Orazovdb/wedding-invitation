@@ -3,7 +3,11 @@ import { weddingData } from "../data/wedding";
 import "./Contact.css";
 
 export function Contact() {
-	if (!weddingData.groomPhone && !weddingData.bridePhone) {
+	const hasContacts =
+		weddingData.groomPhone ||
+		weddingData.bridePhone ||
+		weddingData.organizerPhone;
+	if (!hasContacts) {
 		return null;
 	}
 
@@ -38,6 +42,26 @@ export function Contact() {
 							{weddingData.bridePhone}
 						</a>
 					</div>
+				)}
+				{weddingData.organizerPhone && (
+					<div className="contact-item">
+						<span className="contact-label">{weddingData.organizerLabel}</span>
+						<a
+							href={`tel:${weddingData.organizerPhone.replace(/\s/g, "")}`}
+							className="contact-phone"
+						>
+							{weddingData.organizerPhone}
+						</a>
+					</div>
+				)}
+				{weddingData.logoUrl && (
+					<img
+						src={weddingData.logoUrl}
+						alt=""
+						className="contact-logo"
+						width={150}
+						height={50}
+					/>
 				)}
 			</div>
 		</motion.div>

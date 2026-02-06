@@ -44,8 +44,8 @@ function HeartIcon({ className }: { className?: string }) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			height="44px"
-			width="44px"
+			height="34px"
+			width="34px"
 			version="1.1"
 			viewBox="0 0 204.152 204.152"
 			className={className}

@@ -5,6 +5,8 @@ import "./CouplePhoto.css";
 
 interface CouplePhotoProps {
 	onOpen: () => void;
+	/** Вызвать при первом клике пользователя, чтобы разблокировать воспроизведение музыки на iOS/Android. */
+	onUnlockAudio?: () => void;
 }
 
 function getMonogram(groomName: string, brideName: string): string {
@@ -16,7 +18,7 @@ function getMonogram(groomName: string, brideName: string): string {
 const OPEN_DURATION = 2;
 const AUTO_OPEN_DELAY_MS = 5000;
 
-export function CouplePhoto({ onOpen }: CouplePhotoProps) {
+export function CouplePhoto({ onOpen, onUnlockAudio }: CouplePhotoProps) {
 	const [isOpening, setIsOpening] = useState(false);
 	const [showContentAfterOpen, setShowContentAfterOpen] = useState(false);
 
@@ -40,6 +42,7 @@ export function CouplePhoto({ onOpen }: CouplePhotoProps) {
 
 	const handleClick = () => {
 		if (isOpening) return;
+		onUnlockAudio?.();
 		setIsOpening(true);
 	};
 

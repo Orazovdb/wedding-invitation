@@ -11,7 +11,6 @@
 
 .schedule-title-line {
   display: block;
-  font-family: 'Felidae', Georgia, serif;
   font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -52,7 +51,6 @@
 }
 
 .schedule-item-head {
-  font-family: 'Felidae', Georgia, serif;
   font-size: 1rem;
   font-weight: 600;
   color: #1a1a1a;
@@ -73,7 +71,6 @@
   font-weight: 400;
   color: #333;
   line-height: 1.5;
-  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .schedule-footer-image {

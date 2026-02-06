@@ -11,20 +11,23 @@
     <meta name="keywords" content="свадьба, Rovshen, Hanum, приглашение, Gülzaman, Ашхабад, 2026" />
     <meta name="author" content="Rovshen & Hanum" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph (абсолютные URL обязательны для Telegram, WhatsApp, VK и др.) -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Приглашение на свадьбу Rovshen и Hanum" />
-    <meta property="og:description" content="Свадьба Rovshen и Hanum. 4 апреля 2026, ресторан Gülzaman. Ждём вас!" />
-    <meta property="og:image" content="/rh.jpeg" />
+    <meta property="og:url" content="https://wedding-invitation-gilt-one.vercel.app/" />
+    <meta property="og:title" content="Приглашение на свадьбу Rovshen и Hanum — 4 апреля 2026" />
+    <meta property="og:description" content="Свадьба Rovshen и Hanum. 4 апреля 2026, ресторан Gülzaman, Ашхабад. Ждём вас!" />
+    <meta property="og:image" content="https://wedding-invitation-gilt-one.vercel.app/rh.jpeg" />
+    <meta property="og:image:secure_url" content="https://wedding-invitation-gilt-one.vercel.app/rh.jpeg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:alt" content="Rovshen и Hanum" />
     <meta property="og:locale" content="ru_RU" />
     <meta property="og:site_name" content="Свадьба Rovshen & Hanum" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Приглашение на свадьбу Rovshen и Hanum" />
-    <meta name="twitter:description" content="Свадьба Rovshen и Hanum. 4 апреля 2026, ресторан Gülzaman." />
-    <meta name="twitter:image" content="/rh.jpeg" />
+    <meta name="twitter:title" content="Приглашение на свадьбу Rovshen и Hanum — 4 апреля 2026" />
+    <meta name="twitter:description" content="Свадьба Rovshen и Hanum. 4 апреля 2026, ресторан Gülzaman, Ашхабад." />
+    <meta name="twitter:image" content="https://wedding-invitation-gilt-one.vercel.app/rh.jpeg" />
     <meta name="twitter:image:alt" content="Rovshen и Hanum" />
 
     <!-- Favicon -->
@@ -43,7 +46,7 @@
       "@type": "Event",
       "name": "Свадьба Rovshen и Hanum",
       "description": "Приглашение на свадьбу Rovshen и Hanum. Торжество в ресторане Gülzaman.",
-      "image": "/rh.jpeg",
+      "image": "https://wedding-invitation-gilt-one.vercel.app/rh.jpeg",
       "startDate": "2026-04-04T18:00:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -62,19 +65,7 @@
     }
     </script>
 
-    <!-- Resolve absolute URLs for SEO (og:image, canonical) - run at load -->
-    <script>
-      (function() {
-        var origin = window.location.origin;
-        var img = origin + '/rh.jpeg';
-        document.querySelector('meta[property="og:image"]')?.setAttribute('content', img);
-        document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', img);
-        var link = document.createElement('link');
-        link.rel = 'canonical';
-        link.href = origin + '/';
-        document.head.appendChild(link);
-      })();
-    </script>
+    <link rel="canonical" href="https://wedding-invitation-gilt-one.vercel.app/" />
   </head>
   <body>
     <div id="root"></div>

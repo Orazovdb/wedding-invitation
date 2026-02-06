@@ -20,6 +20,10 @@ function App() {
 
 	const handleOpenInvitation = () => {
 		setIsOpen(true);
+	};
+
+	/** Вызывать только из обработчика клика пользователя — иначе браузеры (iOS Safari, Android) блокируют воспроизведение. */
+	const unlockAudio = () => {
 		audioRef.current?.play().catch(() => {});
 	};
 
@@ -34,7 +38,11 @@ function App() {
 				aria-label="Фоновая музыка приглашения"
 			/>
 			<AnimatePresence mode="wait">
-				<CouplePhoto key="couple-photo" onOpen={handleOpenInvitation} />
+				<CouplePhoto
+					key="couple-photo"
+					onOpen={handleOpenInvitation}
+					onUnlockAudio={unlockAudio}
+				/>
 				<InvitationContent key="content" />
 			</AnimatePresence>
 		</div>

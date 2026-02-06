@@ -26,7 +26,7 @@ export function InvitationContent() {
 				viewport={{ once: true }}
 				transition={{ duration: 0.5 }}
 			>
-				<p>С нетерпением ждём вас!</p>
+				<p>Этот день станет особенным именно благодаря вам!</p>
 			</motion.footer>
 		</motion.main>
 	);

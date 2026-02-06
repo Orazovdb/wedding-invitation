@@ -1,13 +1,18 @@
 /** Путь к аудио в public/. Положите файл "I Think They Call This Love" как i-think-they-call-this-love.mp3 */
 export const weddingData = {
 	musicUrl: "/forever-young.mp3",
-	/** Фото пары на первом экране (при клике открывается приглашение) */
-	couplePhotoUrl: "rh.jpeg",
+	/** Фото пары на первом экране (при клике открывается приглашение). Путь от корня сайта для совместимости с мессенджерами и PWA. */
+	couplePhotoUrl: "/rh.jpeg",
 	groomName: "Rovshen",
 	brideName: "Hanum",
 	/** Телефоны для связи */
 	groomPhone: "+993 71914638",
 	bridePhone: "+993 61570925",
+	/** Логотип в блоке контактов (путь в public/) */
+	logoUrl: "/logo-red.png",
+	/** Доп. контакт (организатор и т.д.) */
+	organizerPhone: "+99362090252",
+	organizerLabel: "Ваш заказ наша ответственность!",
 	weddingDate: new Date("2026-04-04T18:00:00"),
 	venue: "Gülzaman",
 	venueAddress: "",
