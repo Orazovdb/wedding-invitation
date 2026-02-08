@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { CouplePhoto } from "./components/CouplePhoto";
 import { InvitationContent } from "./components/InvitationContent";
 import { weddingData } from "./data/wedding";
@@ -30,6 +31,7 @@ function App() {
 	return (
 		<div className="app">
 			<Analytics />
+			<SpeedInsights />
 			<audio
 				ref={audioRef}
 				src={weddingData.musicUrl}
