@@ -31,7 +31,7 @@ function App() {
 	return (
 		<div className="app">
 			<Analytics />
-			<SpeedInsights />
+			<SpeedInsights route="/" />
 			<audio
 				ref={audioRef}
 				src={weddingData.musicUrl}
