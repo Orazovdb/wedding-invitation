@@ -13,6 +13,12 @@ function App() {
 	const audioRef = useRef<HTMLAudioElement>(null);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
+		document.documentElement.scrollTop = 0;
+		document.body.scrollTop = 0;
+	}, []);
+
+	useEffect(() => {
 		document.body.style.overflow = isOpen ? "" : "hidden";
 		return () => {
 			document.body.style.overflow = "";
@@ -23,9 +29,11 @@ function App() {
 		setIsOpen(true);
 	};
 
-	/** Вызывать только из обработчика клика пользователя — иначе браузеры (iOS Safari, Android) блокируют воспроизведение. */
+
 	const unlockAudio = () => {
-		audioRef.current?.play().catch(() => {});
+		setTimeout(() => {
+			audioRef.current?.play().catch(() => {});
+		}, 1500);
 	};
 
 	return (

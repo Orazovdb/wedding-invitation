@@ -58,3 +58,15 @@
 .contact-phone:hover {
 	color: #b8860b;
 }
+
+.contact-link {
+	font-size: clamp(1rem, 2.5vw, 1.15rem);
+	font-weight: 600;
+	color: #2d2d2d;
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.contact-link:hover {
+	color: #b8860b;
+}

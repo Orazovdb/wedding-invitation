@@ -6,7 +6,8 @@ export function Contact() {
 	const hasContacts =
 		weddingData.groomPhone ||
 		weddingData.bridePhone ||
-		weddingData.organizerPhone;
+		weddingData.organizerPhone ||
+		weddingData.instagramUrl;
 	if (!hasContacts) {
 		return null;
 	}
@@ -50,7 +51,26 @@ export function Contact() {
 							href={`tel:${weddingData.organizerPhone.replace(/\s/g, "")}`}
 							className="contact-phone"
 						>
+							{weddingData.organizerPhone2},
+						</a>
+						<a
+							href={`tel:${weddingData.organizerPhone.replace(/\s/g, "")}`}
+							className="contact-phone"
+						>
 							{weddingData.organizerPhone}
+						</a>
+					</div>
+				)}
+				{weddingData.instagramUrl && (
+					<div className="contact-item">
+						<span className="contact-label">{weddingData.instagramLabel}</span>
+						<a
+							href={weddingData.instagramUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="contact-link"
+						>
+							{weddingData.instagramUrl.replace(/^https?:\/\/(www\.)?/, "")}
 						</a>
 					</div>
 				)}

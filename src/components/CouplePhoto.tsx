@@ -5,7 +5,6 @@ import "./CouplePhoto.css";
 
 interface CouplePhotoProps {
 	onOpen: () => void;
-	/** Вызвать при первом клике пользователя, чтобы разблокировать воспроизведение музыки на iOS/Android. */
 	onUnlockAudio?: () => void;
 }
 
@@ -16,24 +15,13 @@ function getMonogram(groomName: string, brideName: string): string {
 }
 
 const OPEN_DURATION = 2;
-const AUTO_OPEN_DELAY_MS = 5000;
 
 export function CouplePhoto({ onOpen, onUnlockAudio }: CouplePhotoProps) {
 	const [isOpening, setIsOpening] = useState(false);
 	const [showContentAfterOpen, setShowContentAfterOpen] = useState(false);
 
 	useEffect(() => {
-		const autoOpenTimer = setTimeout(() => {
-			setIsOpening(true);
-		}, AUTO_OPEN_DELAY_MS);
-		return () => clearTimeout(autoOpenTimer);
-	}, []);
-
-	useEffect(() => {
-		if (!isOpening) {
-			setShowContentAfterOpen(false);
-			return;
-		}
+		if (!isOpening) return;
 		const timer = setTimeout(() => {
 			setShowContentAfterOpen(true);
 		}, OPEN_DURATION * 1000);
